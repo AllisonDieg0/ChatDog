@@ -11,7 +11,8 @@
             $row = mysqli_fetch_assoc($result);
             $id = $row['id'];
             if($row) {
-                echo"conectado '$id'";                                
+                echo"conectado '$id'";   
+                echo"atulizar cadastro <a href='update.php?id=$id'>clique aqui</a>";                            
             }
             else {
                 return false;
