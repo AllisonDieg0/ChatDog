@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- make a screen to register -->
-    <form action="cadastro_script.php" method="post">
+    <form action="cadastro_script.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
         <label for="email">Email:</label>
@@ -17,8 +17,7 @@
         <input type="phone" name="telefone" id="telefone">
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha">        
-        <input type="submit" value="Cadastrar">
-        
+        <input type="submit" value="cadastro" onclick="cadastro()">
     </form>
 </body>
 </html>

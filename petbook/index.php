@@ -14,6 +14,7 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="senha">
         <input type="submit" value="Entrar">
+        <a href="cadastro.php">Cadastrar</a>
     </form>
     
     
