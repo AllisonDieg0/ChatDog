@@ -10,7 +10,7 @@
     
 
 <?php
-//make a method to do a insert in database, taking the post from the form (cadastro.php)
+
 
     include ('conexao.php');
     $nome = $_POST['nome'];

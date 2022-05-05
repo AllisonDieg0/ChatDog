@@ -7,7 +7,7 @@
     <title>petbook</title>
 </head>
 <body>
-    <!-- make a screen to register -->
+ 
     <form action="cadastro_script.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">

@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-      //make a method for updating the cliente registered
+      
           include('conexao.php');
           $id = $_GET['id'];
           $sql = "SELECT * FROM cliente WHERE id = $id";
@@ -21,7 +21,7 @@
 
 
     ?>
-    <!-- make a screen for updating the cliente register-->
+   
     <form action="update_script.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <label for="nome">Nome:</label>
