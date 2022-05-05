@@ -1,5 +1,5 @@
 <?php
- //make a method to do a select in database, taking the email and pass from table (cliente)
+ 
      
          include 'conexao.php'; 
          $email = $_POST['email'];
