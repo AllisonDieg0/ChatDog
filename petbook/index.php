@@ -20,19 +20,22 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
- 
+<body class="meio">
+   
+<div class="bn">
     <div class="container"> 
       <header class="row">
-    <img src ="ChatDog.png" class="img-fluid" alt="Banner ">
+    <img src ="banner.jpg" class="img-fluid" alt="Banner ">
     </header>
+</div>
 </div>
 <br><br><br><br>
 
+<div class="meio">
 <div class="container">
         <div class="row">
         <div class="col-12">
-      <div class="card-deck">
+      <div class="card-deck" >
         <div class="mx-auto">
         <div class="card">
           <div class="card-body">
@@ -69,16 +72,16 @@
 
 
 </div>
-
+</div>
 <br>
 <br>
-
+<div class="ft">
 <div class="container"> 
       <footer class="row">
-    <img src ="footer.png" class="img-fluid" alt="Banner ">
+    <img src ="footer.jpg" class="img-fluid" alt="Banner ">
     </footer>
 
-
+</div>
 
 </div>
     
