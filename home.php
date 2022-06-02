@@ -25,16 +25,33 @@
 <body class="meio">
 
   <div class="bn">
+
+    <header class="header">
+      <nav>
+        <ul class="menu">
+          <li id="home" class="pointer active" onclick="mudar(id)">
+            <a href="#">HOME</a>
+          </li >
+          <li id="conta" class="pointer" onclick="mudar(id)">
+            <a href="update.php">MINHA CONTA</a>
+          </li>
+          <li id="post" class="pointer" onclick="mudar(id)">
+            <a href="teste.php">MEUS POST</a>
+          </li>
+          <li id="postar" class="pointer" onclick="mudar(id)">
+            <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
+          </li>
+        </ul>
+      </nav>
+
+
+    </header>
+    <br><br><br><br>
     <div class="container">
-      <header class="row">
-        <nav>
-          
-        </nav>
-        <img src="banner.jpg" class="img-fluid" alt="Banner ">
-      </header>
+      <img src="banner.jpg" class="img-fluid" alt="Banner ">
     </div>
   </div>
-  <br><br><br><br>
+  
 
   <div class="meio">
 
@@ -63,14 +80,12 @@
 
                         <div id="bt">
                           <button type="submit" class="btn btn-primary">Postar</button><br><br>
+                        </div>
 
-                          <a href="post.php?id=5">result</a>
 
                   </form>
 
                   <br>
-                  <a href="update.php">Clique para alterar seus dados</a>
-
 
                 </div>
               </div>
@@ -96,7 +111,7 @@
     </div>
 
   </div>
-
+<script src="js/javascript.js"></script>
 
 </body>
 
