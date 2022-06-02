@@ -1,13 +1,17 @@
 <?php
-
+session_start();
 
 include('conexao.php');
-if (isset($_GET['id'])){
-
-    $id = $_GET['id'];
+if (isset($_SESSION['id'])){
+$id = $_SESSION['id'];
+echo $id;
+}
+else{
+    echo "Não está logado";
+}
     
-$sql = "SELECT  imagem  from post # tem que pegar o id do usuario conectado e acrescentar o 'where id = $id'";
-#mostrar a imagem pelo caminho salvo no banco
+$sql = "SELECT  imagem  from post where fk_cliente = $id";
+
 
 
 $result = mysqli_query($conn, $sql);
@@ -22,8 +26,5 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-
-}
-
 
 ?>

@@ -1,6 +1,5 @@
 <?php
- 
-     
+ session_start();    
          include 'conexao.php'; 
          $email = $_POST['email'];
          $senha = $_POST['senha'];         
@@ -11,10 +10,12 @@
             $row = mysqli_fetch_assoc($result);
 
             $id = $row['id'];
+
          
            
             if($row) {
                 echo '<p>login efetuado</p>';
+                $_SESSION['id'] = $id;
                 header('Location: home.php');
              }
             else {
