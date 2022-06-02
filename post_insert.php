@@ -8,7 +8,7 @@ include('upload.php');
 
 try{
 
-    $imagem = Image::imageUpload($_FILES['imagem']);
+    $imagem = imageUpload($_FILES['imagem']);
 
     $sql = "INSERT INTO post (imagem) VALUES ('$imagem')";
     $result = mysqli_query($conn, $sql);

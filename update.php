@@ -10,7 +10,7 @@
 <?php
       
           include('conexao.php');
-          $id = $_GET['id'];
+          include('login.php');
           $sql = "SELECT * FROM cliente WHERE id = $id";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_assoc($result);

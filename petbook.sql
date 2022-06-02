@@ -48,7 +48,10 @@ CREATE TABLE `post` (
   `curtidas` int(11) NOT NULL,
   `descricao` text NOT NULL,
   `comentarios` text NOT NULL,
-  `fk_cliente` int(11) NOT NULL
+  `fk_cliente` int(11) NOT NULL,
+   CONTRAINT `fk_cliente_id`
+	FOREING KEY(`fk_cliente`)
+	REFERENCES `petbook`.`cliente`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

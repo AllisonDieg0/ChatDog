@@ -1,7 +1,7 @@
 <?php
 
-final class Image
-    {
+
+
         /**
          * User image
          *
@@ -10,7 +10,7 @@ final class Image
          * @param array $file_post
          * @return array
          */
-        private static function image(array $file_post): array
+        function image(array $file_post): array
         {
             $file_array = array();
             $file_keys = array_keys($file_post);
@@ -32,12 +32,13 @@ final class Image
          * @param array $img
          * @return string|null
          */
-        final public static function imageUpload(array $img): ?string
+        function imageUpload(array $img): ?string
         {
             $fileUploadErrors = array();
             if (isset($img))
             :
-                $file_img = self::image($img);
+                $file_img = image($img);
+                
                 for ($i = 0; $i < count($file_img); $i++)
                 :
                     if ($file_img[$i]['error'])
@@ -70,13 +71,13 @@ final class Image
                             $newNameImg = sha1(
                                 $file_img[$i]['name']
                             );
-                            move_uploaded_file(
+                           move_uploaded_file(
                                 $file_img[$i]['tmp_name'],
-                                'C:/xampp/htdocs/ChatDog-main/petbook/'. $newNameImg
+                                "C:/xampp/htdocs/ChatDog/petbook/{$newNameImg}.{$file_ext}"
                             );
                         endif;
                     endif;
-                    return $newNameImg;
+                    return "{$newNameImg}.{$file_ext}";
                 endfor;
             else
             :
@@ -85,6 +86,6 @@ final class Image
 
             /** $imagem = Image::imageUpload($_FILES['imagem']) */
         }
-    }
+    
 ?>
 

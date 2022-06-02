@@ -40,6 +40,7 @@
         <div class="card">
           <div class="card-body">
           <form>
+            
   <div class="form-group">
     <label for="exampleInputEmail1">Endereço de email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
@@ -53,7 +54,7 @@
   <button type="submit" class="btn btn-primary" >Enviar</button>
 <br><br>
 <div class="bt">
-<a href="cadastro.php" >Cadastrar</a>
+<a href="cadastro.php">Cadastrar</a>
 
 </div></div>
 </form>

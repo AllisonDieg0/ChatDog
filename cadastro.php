@@ -43,8 +43,6 @@
 </div>
 </div>
 
- 
-
     <div class="meio">
 <div class="container">
         <div class="row">
@@ -53,7 +51,7 @@
         <div class="mx-auto">
         <div class="card">
           <div class="card-body">
-          <form action="cadastro_script.php" method="POST">
+<form action="cadastro_script.php" method="POST">
           <div class="form-group">
 
 
@@ -84,7 +82,7 @@
     <input type="password"  id="senha" name="senha" placeholder="Senha">
   </div>
  <div id="bt">
- <input class="cd" type="submit" value="cadastro" onclick="cadastro()">
+ <input class="cd" type="submit" value="cadastro" onclick="cadastrar()">
 
 
 
