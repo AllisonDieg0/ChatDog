@@ -62,6 +62,8 @@
  <a href="post.php?id=5" >result</a>
 
 </form>
+<!--mostrar o id do cliente que é apresentado na tela login.php -->
+
 <br>
 
 

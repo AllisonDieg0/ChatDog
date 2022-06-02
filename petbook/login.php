@@ -9,7 +9,8 @@
             $sql = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";            
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
-            $id = $row['id'];
+            #tranformar em id da sessão
+            
             if($row) {
                 echo"conectado '$id'";   
                 echo"atulizar cadastro <a href='update.php?id=$id'>clique aqui</a>";                            

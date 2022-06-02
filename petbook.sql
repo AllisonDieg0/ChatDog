@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Mar-2022 às 19:46
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 02-Jun-2022 às 15:49
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `cliente` (
   `senha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `telefone`, `email`, `senha`) VALUES
+(1, 'SAMUEL SANTOS DE SOUZA', '11972494264', 'samucasylva139@gmail.com', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -48,10 +55,7 @@ CREATE TABLE `post` (
   `curtidas` int(11) NOT NULL,
   `descricao` text NOT NULL,
   `comentarios` text NOT NULL,
-  `fk_cliente` int(11) NOT NULL,
-   CONTRAINT `fk_cliente_id`
-	FOREING KEY(`fk_cliente`)
-	REFERENCES `petbook`.`cliente`(`id`)
+  `fk_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,7 +72,8 @@ ALTER TABLE `cliente`
 -- Índices para tabela `post`
 --
 ALTER TABLE `post`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente_fk` (`fk_cliente`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -78,13 +83,23 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `post`
+--
+ALTER TABLE `post`
+  ADD CONSTRAINT `cliente_fk` FOREIGN KEY (`fk_cliente`) REFERENCES `cliente` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
