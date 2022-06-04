@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="css/Style.css">
     <title>petbook</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -25,7 +25,7 @@
 <div class="bn">
     <div class="container"> 
       <header class="row">
-    <img src ="banner.jpg" class="img-fluid" alt="Banner ">
+    <img src ="img/banner.jpg" class="img-fluid" alt="Banner ">
     </header>
 </div>
 </div>
@@ -78,7 +78,7 @@
 <div class="ft">
 <div class="container"> 
       <footer class="row">
-    <img src ="footer.jpg" class="img-fluid" alt="Banner ">
+    <img src ="img/footer.jpg" class="img-fluid" alt="Banner ">
     </footer>
 
 </div>

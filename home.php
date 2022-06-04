@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="css/Style.css">
   <title>petbook</title>
 
   <!-- Latest compiled and minified CSS -->
@@ -25,21 +25,22 @@
 <body class="meio">
 
   <div class="bn">
+  <header class="header">
+<nav>
 
-    <header class="header">
-      <nav>
+  
         <ul class="menu">
-          <li id="home" class="pointer active" onclick="mudar(id)">
-            <a href="#">HOME</a>
-          </li >
-          <li id="conta" class="pointer" onclick="mudar(id)">
+          <li id="home" class="pointer active" >
+            <a href="home.php">PÁGINA INICIAL</a>
+          </li>
+          <li id="conta" class="pointer">
             <a href="update.php">MINHA CONTA</a>
           </li>
-          <li id="post" class="pointer" onclick="mudar(id)">
-            <a href="teste.php">MEUS POST</a>
+          <li id="post" class="pointer" >
+            <a href="teste.php">MEUS POSTS</a>
           </li>
-          <li id="postar" class="pointer" onclick="mudar(id)">
-            <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
+          <li id="postar" class="pointer">
+            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
           </li>
         </ul>
       </nav>
@@ -48,64 +49,14 @@
     </header>
     <br><br><br><br>
     <div class="container">
-      <img src="banner.jpg" class="img-fluid" alt="Banner ">
+      <img src="img/banner.jpg" class="img-fluid" alt="Banner ">
     </div>
   </div>
-  
 
-  <div class="meio">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="card-deck">
-            <div class="mx-auto">
-              <div class="card">
-                <div class="card-body">
-                  <form action="post_insert.php" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                    </div>
-                    <div class="form-group">
-                      <h4>Enviar um Post</h4>
-                      <br><br>
-                      <input type="file" name=imagem[] multiple>
-
-                      <br><br>
-                      <div class="form-group">
-
-                        <input class="dc" type="text" name="descricao" placeholder="Descrição do post">
-
-                        <br><br>
-
-
-                        <div id="bt">
-                          <button type="submit" class="btn btn-primary">Postar</button><br><br>
-                        </div>
-
-
-                  </form>
-
-                  <br>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-  </div>
-  </div>
-  <br>
-  <br>
   <div class="ft">
     <div class="container">
       <footer class="row">
-        <img src="footer.jpg" class="img-fluid" alt="Banner ">
+        <img src="img/footer.jpg" class="img-fluid" alt="Banner ">
       </footer>
 
     </div>

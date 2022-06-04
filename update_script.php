@@ -1,7 +1,7 @@
 <?php
-
+session_start();
+$id = $_SESSION['id'];
     include 'conexao.php';
-    $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
@@ -9,13 +9,10 @@
     
     try {
         $sql = "UPDATE cliente SET nome = '$nome', email = '$email', telefone = '$telefone', senha = '$senha' WHERE id = '$id'";
-        $result = mysqli_query($conn, $sql);
-        if($result) {
-            echo "Atualizado com sucesso!";
-        }
-        else {
-            return false;
-        }
+        $result = mysqli_query($conn, $sql);       
+        echo "Atualizado com sucesso!";
+        header('Location: home.php');
+        
     }
     catch(Exception $e) {
         echo "Error: " . $e->getMessage();

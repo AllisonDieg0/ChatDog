@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/Style.css">
+  <title>petbook</title>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -17,24 +19,11 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <title>Atualizar Cadastro</title>
+
 </head>
 
 <body class="meio">
-  <?php
-  session_start();
-  include('conexao.php');
-  $id = $_SESSION['id'];
-  $sql = "SELECT * FROM cliente WHERE id = $id";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($result);
-  $nome = $row['nome'];
-  $email = $row['email'];
-  $telefone = $row['telefone'];
-  $senha = $row['senha'];
 
-
-  ?>
   <div class="bn">
   <header class="header">
 <nav>
@@ -44,26 +33,29 @@
           <li id="home" class="pointer" >
             <a href="home.php">PÁGINA INICIAL</a>
           </li>
-          <li id="conta" class="pointer active">
+          <li id="conta" class="pointer">
             <a href="update.php">MINHA CONTA</a>
           </li>
           <li id="post" class="pointer" >
-            <a href="teste.php">MEUS POST</a>
+            <a href="teste.php">MEUS POSTS</a>
           </li>
-          <li id="postar" class="pointer">
-            <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
+          <li id="postar" class="pointer active">
+            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
           </li>
         </ul>
       </nav>
 
 
     </header>
+    <br><br><br><br>
     <div class="container">
       <img src="img/banner.jpg" class="img-fluid" alt="Banner ">
     </div>
   </div>
+  
 
   <div class="meio">
+
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -71,35 +63,30 @@
             <div class="mx-auto">
               <div class="card">
                 <div class="card-body">
-                  <form action="update_script.php" method="post">
+                  <form action="post_insert.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="nome">Nome:</label>
-                      <input type="text" name="nome" id="nome" value="<?php echo $row['nome']; ?>">                     
+                    </div>
+                    <div class="form-group">
+                      <h4>Enviar um Post</h4>
+                      <br><br>
+                      <input type="file" name=imagem[] multiple>
 
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email:</label>
-                      <input type="email" name="email" id="email" value="<?php echo $row['email']; ?>">
+                      <br><br>
+                      <div class="form-group">
 
-                    </div>
-                    <div class="form-group">
-                      <label for="telefone">Telefone:</label>
-                      <input type="tel" name="telefone" id="telefone" value="<?php echo $row['telefone']; ?>">
+                        <input class="dc" type="text" name="descricao" placeholder="Descrição do post">
 
-                    </div>
-                    <div class="form-group">
-                      <label for="senha">Senha:</label>
-                      <input type="password" name="senha" id="senha" value="<?php echo $row['senha']; ?>">
-                    </div>
-                    <div id="bt">
-                      <button type="submit" class="btn btn-primary">Enviar</button><br><br>
-                      <div class="bt">
-                        <a href="cadastro.php">Cadastrar</a>
-                      </div>
-                    </div>
+                        <br><br>
+
+
+                        <div id="bt">
+                          <button type="submit" class="btn btn-primary">Postar</button><br><br>
+                        </div>
+
+
                   </form>
-                  <br>
 
+                  <br>
 
                 </div>
               </div>
@@ -116,7 +103,6 @@
   </div>
   <br>
   <br>
-
   <div class="ft">
     <div class="container">
       <footer class="row">
@@ -126,9 +112,8 @@
     </div>
 
   </div>
+<script src="js/javascript.js"></script>
 
 </body>
-
-<script src="js/javascript.js"></script>
 
 </html>
