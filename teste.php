@@ -33,10 +33,13 @@
             <a href="update.php">MINHA CONTA</a>
           </li>
           <li id="post" class="pointer active" >
-            <a href="teste.php">MEUS POST</a>
+            <a href="teste.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer">
-            <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
+            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
+          </li>
+          <li id = "sair">
+          <a href="logout.php">LOGOUT</a>
           </li>
         </ul>
       </nav>
@@ -68,9 +71,9 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         #fazer um loop para mostrar todos os posts
-        echo "<div class='card'>";
+       
         echo "<img src ="."img/".$row["imagem"].">";
-        echo "</div>";
+     
 
     }
 } else {
