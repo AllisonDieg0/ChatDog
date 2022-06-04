@@ -10,8 +10,8 @@ try{
     $imagem = imageUpload($_FILES['imagem']);
     $sql = "INSERT INTO post (imagem, descricao, fk_cliente) VALUES ('$imagem','$descricao','$id')";
     $result = mysqli_query($conn, $sql);
-    header('Location: teste.php');
-  
+    header('Location:teste.php');
+
 }catch(Exception $e) {
     echo "Error: " . $e->getMessage();
 }

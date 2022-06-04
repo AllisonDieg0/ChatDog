@@ -53,9 +53,6 @@
           <li id="postar" class="pointer">
             <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
           </li>
-          <li id = "sair">
-          <a href="logout.php">LOGOUT</a>
-          </li>
         </ul>
       </nav>
 

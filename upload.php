@@ -73,7 +73,7 @@
                             );
                            move_uploaded_file(
                                 $file_img[$i]['tmp_name'],
-                                "C:/xampp/htdocs/ChatDog/img/{$newNameImg}.{$file_ext}"
+                                "C:/xampp/htdocs/ChatDog-logincss_exemplo/img/{$newNameImg}.{$file_ext}"
                             );
                         endif;
                     endif;

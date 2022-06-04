@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,69 +21,100 @@
     <title>Meus Posts</title>
 </head>
 <body class="meio">
-<header class="header">
-<nav>
 
-  
-        <ul class="menu">
-          <li id="home" class="pointer" >
-            <a href="home.php">PÁGINA INICIAL</a>
-          </li>
-          <li id="conta" class="pointer">
-            <a href="update.php">MINHA CONTA</a>
-          </li>
-          <li id="post" class="pointer active" >
-            <a href="teste.php">MEUS POSTS</a>
-          </li>
-          <li id="postar" class="pointer">
-            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
-          </li>
-          <li id = "sair">
-          <a href="logout.php">LOGOUT</a>
-          </li>
-        </ul>
+<div class="container-fluid">
+
+    <header class="row">
+
+      <nav class="container-fluid navbar navbar-expand-sm navbar-dark fixed-top" id="nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <!-- Links -->
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="mx-auto row">
+            <li id="home" class="pointer">
+              <a   href="home.php">PAGINA INICIAL</a>
+            </li>
+            <li   id="home" class="pointer">
+              <a  href="update.php">MINHA CONTA</a>
+            </li>
+
+              <li  id="post" class="pointer active">
+                <a  href="teste.php">MEUS POSTS</a>
+              </li>
+
+              <li  id="postar" class="pointer" >
+                <a  href="postar.php">O QUE VOCÊ ESTÁ PENSANDO ?</a>
+              </li>
+
+          </ul>
+
+
+
       </nav>
 
-
+      
     </header>
-    <br><br><br><br>
+  </div>
+ </div>
 
-    <ul class = "posts" style="display:inline-block; align-items: center;
-  justify-content: center; ">
-              
- 
-    
+
+
+
+</body>
+
 <?php
+
+
+
 session_start();
 include('conexao.php');
 if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
+echo $id;
 }
- 
-$sql = "SELECT post.id, post.data_post, cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
+else{
+    echo "Não está logado";
+}
+    
+$sql = "SELECT  * from post where fk_cliente = $id";
+
+
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
+    // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        #fazer um feed para cada post do cliente e alinha imagem e descricao
-echo'
-<li class="post" style="
-">
-    <div class="infoUserPost" style:"display:flex;">
-        <div class="imgUserPost" style=""></div>                
-    <div class="nameAndHour" >
-        <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
-        <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
-        
-    </div>
-    <p>'.$row['descricao'].'</p>
-    <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
-    <div class="actionBtnPost">
-    <p>'.$row['curtidas'].' curtidas</p>
-        <button onclick = "likear()" type="button" class ="filesPost"><img src ="" >Curtir</button>
-    </div>
-</li>';
+        #fazer um loop para mostrar todos os posts
+      
+      
+        echo '
+         <br><br>
+     <div class="meio">
+        <div class="container" >
+        <div class="row">
+           <div class="col-12" style = "margin-bottom:30px;">
+              <div class="card-deck" >
+                 <div class="mx-auto" >
+                    <div class="card">
+                       <div class="card-body">
+                       <img src ="img/'.$row["imagem"].'" style = "width:100px;">
+                       <br><br>
+                      <h4> LEGENDA:  <b> '.$row['descricao'] .'<b></h4>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        </div>
+     </div>';
+    
+
     }
 } else {
     echo "0 results";
@@ -90,9 +122,16 @@ echo'
 
 mysqli_close($conn);
 
+
 ?>
-   </ul>
-  
+
+
     
-</body>
-</html>
+
+
+
+
+
+
+
+

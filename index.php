@@ -21,12 +21,6 @@
 
 </head>
 <body class="meio">
-<script>
-history.pushState(null, null, null);
-window.addEventListener('popstate', function (event) {
-    history.pushState(null, null, null);
-});
-</script>
    
 <div class="bn">
     <div class="container"> 

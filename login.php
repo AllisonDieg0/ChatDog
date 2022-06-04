@@ -8,16 +8,15 @@
             $sql = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";            
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
-            if(mysqli_num_rows($result) > 0) {
-                $_SESSION['id'] = $row['id'];
+            if($row) {                
+                $id = $row['id'];
+                echo '<p>login efetuado</p>';
+                $_SESSION['id'] = $id;
                 header('Location: home.php');
-            }
+             }
             else {
-                echo '<script>alert("Email ou senha incorretos!");
-                window.location.href = "index.php";</script>';                
+                echo "<script>alert('Usuario não encontrado')<script>";
             }
-
-           
         }
         catch(Exception $e) {
            
