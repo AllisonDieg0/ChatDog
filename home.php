@@ -55,6 +55,54 @@
       <img src="img/banner.jpg" class="img-fluid" alt="Banner ">
     </div>
   </div>
+  <br><br><br><br>
+
+  <ul class = "posts" style="display:inline-block; align-items: center;
+  justify-content: center; ">
+              
+ 
+    
+<?php
+session_start();
+include('conexao.php');
+if (isset($_SESSION['id'])){
+$id = $_SESSION['id'];
+}
+ 
+$sql = "SELECT post.id, cliente.nome, post.data_post, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente";
+
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        #fazer um feed para cada post do cliente e alinha imagem e descricao
+echo'
+<li class="post" style="
+">
+    <div class="infoUserPost" style:"display:flex;">
+        <div class="imgUserPost" style=""></div>                
+    <div class="nameAndHour" >
+        <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
+        <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+        
+    </div>
+    <p>'.$row['descricao'].'</p>
+    <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
+    <div class="actionBtnPost">
+    <p>'.$row['curtidas'].' curtidas</p>
+        <button onclick = "likear()" type="button" class ="filesPost"><img src ="" >Curtir</button>
+    </div>
+</li>';
+    }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+
+?>
+   </ul>
+  
 
   <div class="ft">
     <div class="container">

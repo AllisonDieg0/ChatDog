@@ -1,26 +1,27 @@
-*{
+* {
     margin: 0px;
 }
 
-.menu{
+.menu {
     display: flex;
-    
+
 }
 
 
-nav{
+nav {
     /* background-color: red; */
     display: flex;
-    margin:  0 auto;
-   
+    margin: 0 auto;
+
 }
 
 
-nav{
+nav {
     display: flex;
     margin: 0 auto;
 }
-.header{
+
+.header {
     display: flex;
     position: fixed;
     float: inline-end;
@@ -33,27 +34,66 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-ul, li, p{
+
+ul,
+li,
+p {
     list-style: none;
     font-size: 1rem;
     padding: 0px;
 }
-.menu li{
+
+.menu li {
     margin-left: 20px;
-    display:block;
+    display: block;
     text-align: center;
 }
-li.active a{
+
+li.active a {
     border-bottom: 5px solid white;
     border-radius: 3px;
     transition: 0.2s ease;
 }
-a{
+
+a {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
 }
 
+.filesPost:hover {
+    background: red;
+}
+
+.filesPost {
+    background: white;
+    border-radius: 20px;
+}
+
+.post {
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 10px;
+    width: 70%;
+    padding: 25px;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.05);
+    float: left;
+
+}
+
+.imgUserPost {
+    width: 30px;
+    height: 35px;
+    border-radius: 50%;
+    background: #23A0FF;
+}
+
+.imgPost img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    background: #23A0FF;
+}
 
 .menu li a {
     color: #FFF;
@@ -63,52 +103,56 @@ a{
     text-align: center;
     height: 30px;
 }
+
 a:hover {
     border-bottom: 5px solid white;
     border-radius: 2px;
     transition: 0.3s ease;
-    } */
-    .menu li a:hover, .menu li.active a {
+}
+
+*/ .menu li a:hover,
+.menu li.active a {
     border-bottom: 5px solid white;
     border-radius: 3px;
     transition: 0.3s ease;
 }
 
 
-#bt{
+#bt {
 
     text-align: center;
 
 }
-    
-.ft{
+
+.ft {
     background-color: #ffd6e8;
 
 }
 
 
-.bn{
+.bn {
     background-color: #ffd6e8;
     z-index: 1;
 }
 
-.meio{
+.meio {
     display: block;
     background-color: #ffd6e8;
     z-index: 0;
 }
-#botao{
+
+#botao {
 
     color: white;
 }
 
-   /* .content label{display: block; font-size: 30px;}
+/* .content label{display: block; font-size: 30px;}
 
    .content a{display: block;}
 
    .content input{display: block;} */
 
-   /* .footer{ width : 100%; background-color: rgb(rgba(136, 117, 117, 0.692), green, blue); display: flex;justify-content: center;
+/* .footer{ width : 100%; background-color: rgb(rgba(136, 117, 117, 0.692), green, blue); display: flex;justify-content: center;
     flex-direction: column;;}
 
     .footer img{ width: 50%; height: 300px; padding-left: 450px;;}  */

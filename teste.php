@@ -20,7 +20,6 @@
     <title>Meus Posts</title>
 </head>
 <body class="meio">
-<div class="bn">
 <header class="header">
 <nav>
 
@@ -46,35 +45,44 @@
 
 
     </header>
-    <div class="container">
-    </div>
-  </div>
+    <br><br><br><br>
+
+    <ul class = "posts" style="display:inline-block; align-items: center;
+  justify-content: center; ">
+              
+ 
     
 <?php
 session_start();
 include('conexao.php');
 if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
-echo $id;
 }
-else{
-    echo "Não está logado";
-}
-    
-$sql = "SELECT  imagem  from post where fk_cliente = $id";
-
-
+ 
+$sql = "SELECT post.id, post.data_post, cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id ";
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        #fazer um loop para mostrar todos os posts
-       
-        echo "<img src ="."img/".$row["imagem"].">";
-     
-
+        #fazer um feed para cada post do cliente e alinha imagem e descricao
+echo'
+<li class="post" style="
+">
+    <div class="infoUserPost" style:"display:flex;">
+        <div class="imgUserPost" style=""></div>                
+    <div class="nameAndHour" >
+        <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
+        <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+        
+    </div>
+    <p>'.$row['descricao'].'</p>
+    <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
+    <div class="actionBtnPost">
+    <p>'.$row['curtidas'].' curtidas</p>
+        <button onclick = "likear()" type="button" class ="filesPost"><img src ="" >Curtir</button>
+    </div>
+</li>';
     }
 } else {
     echo "0 results";
@@ -83,6 +91,8 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 
 ?>
+   </ul>
+  
     
 </body>
 </html>
