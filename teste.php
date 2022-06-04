@@ -59,7 +59,7 @@ if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
 }
  
-$sql = "SELECT post.id, post.data_post, cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id ";
+$sql = "SELECT post.id, post.data_post, cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
 
 $result = mysqli_query($conn, $sql);
 
