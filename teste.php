@@ -66,23 +66,25 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         #fazer um feed para cada post do cliente e alinha imagem e descricao
-echo'
-<li class="post" style="
-">
-    <div class="infoUserPost" style:"display:flex;">
-        <div class="imgUserPost" style=""></div>                
-    <div class="nameAndHour" >
-        <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
-        <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
-        
-    </div>
-    <p>'.$row['descricao'].'</p>
-    <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
-    <div class="actionBtnPost">
-    <p>'.$row['curtidas'].' curtidas</p>
-        <button onclick = "likear()" type="button" class ="filesPost"><img src ="" >Curtir</button>
-    </div>
-</li>';
+        echo'
+        <li class="post" style="
+        ">
+            <div class="infoUserPost" style:"display:flex;">
+                <div class="imgUserPost" style=""></div>
+                               
+            <div class="nameAndHour" >
+                <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
+                <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+                
+            </div>
+            <p>'.$row['descricao'].'</p>
+            <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
+            <div class="actionBtnPost" id = "like'.$row['id'].'">
+            <b>curtidas</b><p>'.$row['curtidas'].'</p>
+                <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>   
+             
+            </div>
+        </li>';
     }
 } else {
     echo "0 results";
