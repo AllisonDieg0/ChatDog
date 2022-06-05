@@ -85,7 +85,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="imgUserPost" style=""><img src="img/'.$row['imagem_cliente'].'" style="width:100%; border-radius:50%;"> </div>
             <div class="nameAndHour" >
                 <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
-                <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+                <p style ="color#D1D1D1; font-size:12px">'.date("d-m-Y",strtotime($row['data_post'])).'</p>
              </div>
             </div>
             <p>'.$row['descricao'].'</p>

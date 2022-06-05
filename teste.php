@@ -59,7 +59,7 @@ if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
 }
  
-$sql = "SELECT post.id, post.data_post,cliente.imagem as'imagem_cliente', cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
+$sql = "SELECT post.id, post.data_post,post.comentarios, cliente.imagem as'imagem_cliente', cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
 
 $result = mysqli_query($conn, $sql);
 
@@ -74,14 +74,15 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="imgUserPost" style=""><img src="img/'.$row['imagem_cliente'].'" style="width:100%; border-radius:50%;"> </div>
             <div class="nameAndHour" >
                 <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
-                <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+                <p style ="color#D1D1D1; font-size:12px">'.date("d-m-Y",strtotime($row['data_post'])).'</p>
              </div>
             </div>
             <p>'.$row['descricao'].'</p>
             <center><div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div></center>
-            <div class="actionBtnPost" id = "like'.$row['id'].'">
+            <div class="actionBtnPost" id = "like'.$row['id'].'" style ="">
             <b>curtidas</b><p>'.$row['curtidas'].'</p>
-                <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>   
+                <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>
+                <button type="button" onclick = "comentar('.$row['id'].',value)" id="like'.$row['id'].'" class ="filesComent" value="'.$row['comentarios'].'">comentar </button>  
              
             </div>
         </li>';
