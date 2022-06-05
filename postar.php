@@ -25,25 +25,25 @@
 <body class="meio">
 
   <div class="bn">
-  <header class="header">
-<nav>
+    <header class="header">
+      <nav>
 
-  
+
         <ul class="menu">
-          <li id="home" class="pointer" >
+          <li id="home" class="pointer">
             <a href="home.php">PÁGINA INICIAL</a>
           </li>
           <li id="conta" class="pointer">
             <a href="update.php">MINHA CONTA</a>
           </li>
-          <li id="post" class="pointer" >
+          <li id="post" class="pointer">
             <a href="teste.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer active">
             <a href="postar.php">POSTAR ALGO</a>
           </li>
-          <li id = "sair">
-          <a href="logout.php">LOGOUT</a>
+          <li id="sair">
+            <a href="logout.php">LOGOUT</a>
           </li>
         </ul>
       </nav>
@@ -55,7 +55,7 @@
       <img src="img/banner.jpg" class="img-fluid" alt="Banner ">
     </div>
   </div>
-  
+
 
   <div class="meio">
 
@@ -68,16 +68,16 @@
                 <div class="card-body">
                   <form action="post_insert.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                    </div>
-                    <div class="form-group">
-                      <h4>Enviar um Post</h4>
-                      <br><br>
-                      <input type="file" name=imagem[] multiple>
 
+                      <div class="form-group">
+                        <h4>Enviar um Post</h4>
+                        <br><br>
+                        <input type="file" name=imagem[] multiple>
+                      </div>
                       <br><br>
                       <div class="form-group">
 
-                        <input class="dc" type="text" name="descricao" placeholder="Descrição do post">
+                        <textarea class="dc" type="textarea" name="descricao" placeholder="Descrição do post" style="width: 100%;"></textarea>
 
                         <br><br>
 
@@ -115,7 +115,7 @@
     </div>
 
   </div>
-<script src="js/javascript.js"></script>
+  <script src="js/javascript.js"></script>
 
 </body>
 

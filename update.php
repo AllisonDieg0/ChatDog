@@ -28,12 +28,6 @@
   $sql = "SELECT * FROM cliente WHERE id = $id";
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
-  $nome = $row['nome'];
-  $email = $row['email'];
-  $telefone = $row['telefone'];
-  $senha = $row['senha'];
-
-
   ?>
   <div class="bn">
   <header class="header">
@@ -51,7 +45,7 @@
             <a href="teste.php">MEUS POST</a>
           </li>
           <li id="postar" class="pointer">
-            <a href="home.php">POSTAR ALGO</a>
+            <a href="postar.php">POSTAR ALGO</a>
           </li>
           <li id = "sair">
           <a href="logout.php">LOGOUT</a>
@@ -74,7 +68,14 @@
             <div class="mx-auto">
               <div class="card">
                 <div class="card-body">
-                  <form action="update_script.php" method="post">
+                  <form action="update_script.php" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+
+                    <center><label for="imagem"><B>IMAGEM</B></label><br></center>
+                      <input type="file" value="<?php echo $row['imagem']; ?>" name=imagem[] multiple>
+                      
+                    </div>
+                    <center>
                     <div class="form-group">
                       <label for="nome">Nome:</label>
                       <input type="text" name="nome" id="nome" value="<?php echo $row['nome']; ?>">                     
@@ -96,10 +97,9 @@
                     </div>
                     <div id="bt">
                       <button type="submit" class="btn btn-primary">Enviar</button><br><br>
-                      <div class="bt">
-                        <a href="cadastro.php">Cadastrar</a>
-                      </div>
+                      
                     </div>
+                    </center>
                   </form>
                   <br>
 

@@ -85,14 +85,12 @@ a {
     width: 30px;
     height: 35px;
     border-radius: 50%;
-    background: #23A0FF;
 }
 
 .imgPost img {
     max-height: 50%;
     max-width: 50%;
     border-radius: 10px;
-    background: #23A0FF;
 }
 .response{
     display: flex;

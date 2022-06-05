@@ -59,7 +59,7 @@ if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
 }
  
-$sql = "SELECT post.id, post.data_post, cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
+$sql = "SELECT post.id, post.data_post,cliente.imagem as'imagem_cliente', cliente.nome, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente where cliente.id = $id order by post.id desc";
 
 $result = mysqli_query($conn, $sql);
 
@@ -69,13 +69,13 @@ if (mysqli_num_rows($result) > 0) {
         echo'
         <li class="post" style="margin-left:15%;">
         
-            <div class="infoUserPost" style:"display:flex;">
-                <div class="imgUserPost" style=""></div>
-                               
+            <div class="infoUserPost">
+            <div class="response" style ="display:flex"; >
+                <div class="imgUserPost" style=""><img src="img/'.$row['imagem_cliente'].'" style="width:100%; border-radius:50%;"> </div>
             <div class="nameAndHour" >
                 <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
                 <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
-                
+             </div>
             </div>
             <p>'.$row['descricao'].'</p>
             <center><div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div></center>
@@ -85,6 +85,7 @@ if (mysqli_num_rows($result) > 0) {
              
             </div>
         </li>';
+       
     }
 } else {
     echo "0 results";
@@ -94,6 +95,8 @@ mysqli_close($conn);
 
 ?>
    </ul>
+             
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="js/javascript.js"></script>
     
 </body>

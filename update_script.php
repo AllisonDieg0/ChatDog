@@ -2,15 +2,16 @@
 session_start();
 $id = $_SESSION['id'];
     include 'conexao.php';
+    include 'upload.php';
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $imagem = imageUpload($_FILES['imagem']);
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
     
     try {
-        $sql = "UPDATE cliente SET nome = '$nome', email = '$email', telefone = '$telefone', senha = '$senha' WHERE id = '$id'";
-        $result = mysqli_query($conn, $sql);       
-        echo "Atualizado com sucesso!";
+        $sql = "UPDATE cliente SET imagem ='$imagem', nome = '$nome', email = '$email', telefone = '$telefone', senha = '$senha' WHERE id = '$id'";
+        $result = mysqli_query($conn, $sql);
         header('Location: home.php');
         
     }

@@ -70,7 +70,7 @@ if (isset($_SESSION['id'])){
 $id = $_SESSION['id'];
 }
  
-$sql = "SELECT post.id, cliente.nome, post.data_post, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente ";
+$sql = "SELECT post.id, cliente.nome,cliente.imagem as'imagem_cliente', post.data_post, post.descricao,post.imagem, post.comentarios, post.curtidas from post inner join cliente on cliente.id = post.fk_cliente ";
 
 $result = mysqli_query($conn, $sql);
 
@@ -81,8 +81,8 @@ if (mysqli_num_rows($result) > 0) {
         <li class="post" style="margin-left:15%;">
         
             <div class="infoUserPost">
-            <div class="response" style ="display:flex" >
-                <div class="imgUserPost" style=""> </div>
+            <div class="response" style ="display:flex"; >
+                <div class="imgUserPost" style=""><img src="img/'.$row['imagem_cliente'].'" style="width:100%; border-radius:50%;"> </div>
             <div class="nameAndHour" >
                 <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
                 <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>

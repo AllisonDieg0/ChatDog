@@ -1,6 +1,14 @@
-/*fazer conexao com o banco petbook*/
 
+/*passar o id para uma variavel global
+id_post = id;
+}
+$(function(){
+    $("#like"+id_post+" .filesPost").on("click", function(){    
+    alert("clicou");
+    });
+    });
 
+*/
 function likear(id) {
     try{
 
