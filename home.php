@@ -41,7 +41,7 @@
             <a href="teste.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer">
-            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
+            <a href="postar.php">POSTAR ALGO</a>
           </li>
           <li id = "sair">
           <a href="logout.php">LOGOUT</a>
@@ -77,25 +77,25 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
       
-echo'
-<li class="post" style="
-">
-    <div class="infoUserPost" style:"display:flex;">
-        <div class="imgUserPost" style=""></div>
-                       
-    <div class="nameAndHour" >
-        <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
-        <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+        echo'
+        <li class="post" style="margin-left:15%;">
         
-    </div>
-    <p>'.$row['descricao'].'</p>
-    <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
-    <div class="actionBtnPost" id = "like'.$row['id'].'">
-    <b>curtidas</b><p>'.$row['curtidas'].'</p>
-        <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>   
-     
-    </div>
-</li>';
+            <div class="infoUserPost">
+            <div class="response" style ="display:flex" >
+                <div class="imgUserPost" style=""> </div>
+            <div class="nameAndHour" >
+                <strong style= "color:#23A0FF">'.$row['nome'].'</strong>
+                <p style ="color#D1D1D1; font-size:12px">'.$row['data_post'].'</p>
+             </div>
+            </div>
+            <p>'.$row['descricao'].'</p>
+            <center><div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div></center>
+            <div class="actionBtnPost" id = "like'.$row['id'].'">
+            <b>curtidas</b><p>'.$row['curtidas'].'</p>
+                <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>   
+             
+            </div>
+        </li>';
     }
 } else {
     echo "0 results";

@@ -40,7 +40,7 @@
             <a href="teste.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer active">
-            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
+            <a href="postar.php">POSTAR ALGO</a>
           </li>
           <li id = "sair">
           <a href="logout.php">LOGOUT</a>

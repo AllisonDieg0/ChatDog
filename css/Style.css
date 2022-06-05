@@ -89,10 +89,13 @@ a {
 }
 
 .imgPost img {
-    max-width: 200px;
-    max-height: 200px;
+    max-height: 50%;
+    max-width: 50%;
     border-radius: 10px;
     background: #23A0FF;
+}
+.response{
+    display: flex;
 }
 
 .menu li a {

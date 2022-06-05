@@ -35,7 +35,7 @@
             <a href="teste.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer">
-            <a href="postar.php">O QUE VOCÊ ESTA PENSANDO?</a>
+            <a href="postar.php">POSTAR ALGO</a>
           </li>
           <li id = "sair">
           <a href="logout.php">LOGOUT</a>
@@ -67,8 +67,8 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         #fazer um feed para cada post do cliente e alinha imagem e descricao
         echo'
-        <li class="post" style="
-        ">
+        <li class="post" style="margin-left:15%;">
+        
             <div class="infoUserPost" style:"display:flex;">
                 <div class="imgUserPost" style=""></div>
                                
@@ -78,7 +78,7 @@ if (mysqli_num_rows($result) > 0) {
                 
             </div>
             <p>'.$row['descricao'].'</p>
-            <div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div>
+            <center><div class="imgPost"><img src="img/'.$row['imagem'].'" style=""></div></center>
             <div class="actionBtnPost" id = "like'.$row['id'].'">
             <b>curtidas</b><p>'.$row['curtidas'].'</p>
                 <button onclick = "likear('.$row['id'].');" id= "true" type="button" class ="filesPost">Curtir</button>   
@@ -94,7 +94,7 @@ mysqli_close($conn);
 
 ?>
    </ul>
-  
+  <script src="js/javascript.js"></script>
     
 </body>
 </html>

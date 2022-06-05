@@ -51,7 +51,7 @@
             <a href="teste.php">MEUS POST</a>
           </li>
           <li id="postar" class="pointer">
-            <a href="home.php">O QUE VOCÊ ESTA PENSANDO?</a>
+            <a href="home.php">POSTAR ALGO</a>
           </li>
           <li id = "sair">
           <a href="logout.php">LOGOUT</a>
