@@ -23,11 +23,18 @@
 <body class="meio">
   <?php
   session_start();
-  include('conexao.php');
-  $id = $_SESSION['id'];
-  $sql = "SELECT * FROM cliente WHERE id = $id";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($result);
+  if (isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+    include('conexao.php');
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM cliente WHERE id = $id";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    }
+    else{
+      header('Location: login.php');
+    }
+ 
   ?>
   <div class="bn">
   <header class="header">
@@ -42,7 +49,7 @@
             <a href="update.php">MINHA CONTA</a>
           </li>
           <li id="post" class="pointer" >
-            <a href="teste.php">MEUS POST</a>
+            <a href="post.php">MEUS POST</a>
           </li>
           <li id="postar" class="pointer">
             <a href="postar.php">POSTAR ALGO</a>

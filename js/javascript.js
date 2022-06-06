@@ -1,13 +1,12 @@
 function comentar(id, value) {
-
+    document.location.reload();
     while (value.includes("/")) {
         value = value;
         value = value.replace("/", "\n");
     }
 
     var texto = prompt(value + " \nComentar:");
-    console.log(texto);
-    if (texto != "") {
+    if (texto != "") {        
         $(document).ready(function () {
             $(function () {
                 
@@ -20,10 +19,9 @@ function comentar(id, value) {
                     },
                     dataType: "json"
                 });
-                console.log(id);
             });
         });
-
+        document.location.reload();
     }
 }
 /*try {

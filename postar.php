@@ -23,6 +23,14 @@
 </head>
 
 <body class="meio">
+  <?php
+  session_start(); 
+  if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+  } else {
+    header('Location: login.php');
+  }
+  ?>
 
   <div class="bn">
     <header class="header">
@@ -37,7 +45,7 @@
             <a href="update.php">MINHA CONTA</a>
           </li>
           <li id="post" class="pointer">
-            <a href="teste.php">MEUS POSTS</a>
+            <a href="post.php">MEUS POSTS</a>
           </li>
           <li id="postar" class="pointer active">
             <a href="postar.php">POSTAR ALGO</a>
