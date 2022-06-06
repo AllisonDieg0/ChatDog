@@ -8,23 +8,21 @@
   
   <link rel="stylesheet" href="css/Style.css">
   <title>petbook</title>
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="js/jQuery.js"></script>
 
-  <!-- jQuery library -->
-  <script src="js/jQuery.js"></script>
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
 <body class="meio">
-<script src="jQuery.js"></script>
   <div class="bn">
   <header class="header">
 <nav>
@@ -120,7 +118,8 @@ mysqli_close($conn);
     </div>
 
   </div>
-<script src="js/javascript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/javascript.js"></script>
 
 </body>
 

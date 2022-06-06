@@ -100,7 +100,7 @@ mysqli_close($conn);
 ?>
    </ul>
              
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="js/javascript.js"></script>
     
 </body>
